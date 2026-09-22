@@ -1194,7 +1194,236 @@ dialog::backdrop {
   color: var(--pink) !important;
 }
 
-/* 8. Interactive bookshelf */
+/* 8. Memory game */
+.memory-game {
+  margin-top: 78px;
+  padding: 42px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.memory-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 28px;
+  margin-bottom: 30px;
+}
+.memory-intro h2 {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+}
+.memory-intro > div:first-child > p:last-child {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+.memory-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.memory-toolbar span,
+.memory-toolbar button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.memory-toolbar b {
+  color: var(--pink);
+}
+.memory-toolbar button {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  cursor: pointer;
+}
+.memory-layout {
+  display: grid;
+  grid-template-columns: minmax(430px, 1.25fr) minmax(260px, 0.75fr);
+  gap: 24px;
+}
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.memory-card {
+  height: 128px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  perspective: 800px;
+}
+.memory-card-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.42s cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+.memory-card.flipped .memory-card-inner,
+.memory-card.matched .memory-card-inner {
+  transform: rotateY(180deg);
+}
+.memory-card-back,
+.memory-card-front {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 7px 16px rgba(20, 21, 26, 0.1);
+}
+.memory-card-back {
+  color: var(--pink);
+  background:
+    radial-gradient(
+      circle at 75% 22%,
+      rgba(255, 23, 109, 0.2) 0 8px,
+      transparent 9px
+    ),
+    linear-gradient(145deg, var(--paper), var(--card));
+  font:
+    800 1rem Manrope,
+    sans-serif;
+  letter-spacing: 0.12em;
+}
+.memory-card-front {
+  transform: rotateY(180deg);
+  align-content: center;
+  gap: 5px;
+  color: #fff;
+  background: var(--pink);
+}
+.memory-card-front b {
+  font:
+    800 2.2rem/1 Manrope,
+    sans-serif;
+}
+.memory-card-front small {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.memory-card:hover .memory-card-inner,
+.memory-card:focus-visible .memory-card-inner {
+  transform: translateY(-4px);
+}
+.memory-card.flipped:hover .memory-card-inner,
+.memory-card.flipped:focus-visible .memory-card-inner,
+.memory-card.matched:hover .memory-card-inner,
+.memory-card.matched:focus-visible .memory-card-inner {
+  transform: rotateY(180deg) translateY(-4px);
+}
+.memory-card:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.memory-climb .memory-card-front {
+  background: #d91f64;
+}
+.memory-biomed .memory-card-front {
+  background: #8a6c8f;
+}
+.memory-make .memory-card-front {
+  background: #69754b;
+}
+.memory-write .memory-card-front {
+  background: #4f6f8f;
+}
+.memory-louis .memory-card-front {
+  background: #a85d3d;
+}
+.memory-test .memory-card-front {
+  background: #30333b;
+}
+.memory-card.matched .memory-card-front {
+  box-shadow:
+    inset 0 0 0 4px rgba(255, 255, 255, 0.72),
+    0 8px 20px rgba(20, 21, 26, 0.18);
+}
+.memory-fact {
+  min-height: 266px;
+  border-radius: 18px;
+  padding: 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.memory-fact.complete {
+  background: rgba(255, 23, 109, 0.09);
+  border-color: var(--pink);
+}
+.memory-fact-label {
+  margin: 0 0 12px;
+  color: var(--pink);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+.memory-fact-icon {
+  color: var(--pink);
+  font:
+    800 2rem/1 Manrope,
+    sans-serif;
+}
+.memory-fact h3 {
+  margin: 10px 0 8px;
+  font:
+    800 1.6rem/1.1 Manrope,
+    sans-serif;
+}
+.memory-fact > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+@media (max-width: 850px) {
+  .memory-intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .memory-toolbar {
+    justify-content: flex-start;
+  }
+  .memory-layout {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .memory-game {
+    padding: 26px 16px;
+  }
+  .memory-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .memory-card {
+    height: 102px;
+  }
+  .memory-card-front b {
+    font-size: 1.8rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .memory-card-inner {
+    transition: none;
+  }
+}
+
+/* 9. Interactive bookshelf */
 .books-section {
   padding-top: 74px;
 }
@@ -1424,7 +1653,7 @@ dialog::backdrop {
   }
 }
 
-/* 9. Do Not Press button */
+/* 10. Do Not Press button */
 .danger-zone {
   padding: 8px 24px 30px;
   display: flex;
