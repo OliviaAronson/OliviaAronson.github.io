@@ -36,3 +36,34 @@
 .beam-photo{height:310px;padding:0;background:#f7f7f8;overflow:hidden}
 .beam-photo img{width:100%;height:100%;object-fit:cover;object-position:center;transform:none}
 @media(max-width:700px){.beam-photo{height:280px;padding:0}.beam-photo img{transform:none}}
+
+
+/* interactive beam test */
+.beam-test-stage{position:relative}
+.beam-test-stage img{transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .2s}
+.load-arrow{position:absolute;top:12px;left:50%;transform:translate(-50%,-70px);opacity:0;color:var(--pink);font:800 2.2rem/1 Manrope,sans-serif;text-align:center;text-shadow:0 2px 8px rgba(255,255,255,.8);transition:.45s}
+.load-arrow span{display:block;font-size:.6rem;letter-spacing:.12em}
+.crack-mark{position:absolute;left:49%;top:48%;font-size:3rem;opacity:0;transform:scale(.2) rotate(-12deg);transition:.18s}
+.beam-card.testing .load-arrow{opacity:1;transform:translate(-50%,0)}
+.beam-card.testing .beam-test-stage img{transform:translateY(8px) scaleY(.96)}
+.beam-card.failed .beam-test-stage img{transform:translateY(11px) rotate(.6deg);filter:contrast(1.08)}
+.beam-card.failed .crack-mark{opacity:1;transform:scale(1) rotate(-12deg)}
+.beam-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:18px}
+.beam-test-button{border:0;border-radius:10px;background:var(--pink);color:#fff;padding:9px 13px;font-weight:800;cursor:pointer}
+.beam-test-button:hover{transform:translateY(-1px)}
+.beam-test-result{min-height:1.5em;margin:10px 0 0!important;font-size:.85rem;font-weight:700;color:var(--pink)!important}
+
+/* hidden climbing route */
+.route-clue{font-size:.78rem!important;font-style:italic;opacity:.78;margin-top:26px}
+.climb-hold{position:fixed;z-index:45;width:28px;height:20px;border:0;background:var(--pink);border-radius:55% 45% 60% 40%;box-shadow:0 4px 10px rgba(0,0,0,.2);cursor:pointer;opacity:0;pointer-events:none;transform:scale(.45) rotate(-18deg);transition:.25s}
+.climb-hold::after{content:"";position:absolute;width:8px;height:4px;border-radius:50%;background:rgba(255,255,255,.55);top:4px;left:6px}
+.climb-hold.active-hold{opacity:1;pointer-events:auto;transform:scale(1) rotate(-18deg);animation:holdPulse 2.4s infinite}
+.hold-one{position:absolute;right:4%;top:70%}.hold-two{left:10px;top:22%}.hold-three{right:18px;top:48%}.hold-four{left:19%;bottom:18px}.hold-five{right:11%;bottom:14%}
+.route-progress{position:fixed;right:18px;bottom:18px;z-index:44;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:.7rem;font-weight:800;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s}
+.route-progress.show{opacity:1;transform:none}
+.top-banner{position:fixed;left:50%;top:24px;z-index:60;transform:translate(-50%,-120px);background:var(--pink);color:#fff;border-radius:16px;padding:13px 20px;font:800 1rem Manrope,sans-serif;box-shadow:var(--shadow);transition:.4s;text-align:center}
+.top-banner span{font:600 .75rem "DM Sans",sans-serif;margin-left:8px}
+.top-banner.show{transform:translate(-50%,0)}
+@keyframes holdPulse{50%{box-shadow:0 4px 10px rgba(0,0,0,.2),0 0 0 7px rgba(255,23,109,.12)}}
+@media(max-width:700px){.climb-hold{width:31px;height:23px}.hold-one{right:5%;top:76%}.route-progress{bottom:10px;right:10px}.top-banner{width:calc(100% - 30px)}}
+@media(prefers-reduced-motion:reduce){.climb-hold.active-hold{animation:none}.beam-test-stage img,.load-arrow,.crack-mark{transition:none}}
