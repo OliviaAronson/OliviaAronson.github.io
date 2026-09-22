@@ -6,7 +6,7 @@ This is a plain HTML, CSS, and JavaScript website hosted with GitHub Pages. It d
 
 - `index.html` contains the page sections, text, links, and image references.
 - `styles.css` controls the layout, colors, mobile design, and animations.
-- `script.js` controls dark mode, project details, the bookshelf, the beam test, the poem window, and the Do Not Press button.
+- `script.js` controls dark mode, project details, the memory game, the bookshelf, the beam test, the poem window, and the Do Not Press button.
 - `assets/` contains photographs and other images.
 - `documents/` contains reports and downloadable work samples.
 
@@ -19,6 +19,10 @@ Open `index.html`, search for the existing sentence, and replace it. The page se
 ### Add or change a book
 
 The visible book spines are in the `BOOKS` section of `index.html`. The notes that appear after clicking a spine are in the `books` list inside `script.js`. Keep the `data-book` numbers in the same order as the JavaScript list, beginning with `0`.
+
+### Change a memory-game fact
+
+Open `script.js` and find the `memoryItems` list. Each item contains the card icon, its short label, and the fact revealed when the pair is matched.
 
 ### Replace an image
 
