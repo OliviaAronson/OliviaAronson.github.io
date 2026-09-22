@@ -42,3 +42,58 @@ document.querySelector('.copy-email').addEventListener('click', async event => {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 1700);
 });
+
+
+// Interactive T-beam failure test
+const beamCard = document.querySelector('.beam-card');
+const beamTestButton = document.querySelector('.beam-test-button');
+const beamResult = document.querySelector('.beam-test-result');
+let beamTimer;
+if (beamCard && beamTestButton && beamResult) {
+  beamTestButton.addEventListener('click', () => {
+    clearTimeout(beamTimer);
+    if (beamCard.classList.contains('failed')) {
+      beamCard.classList.remove('failed', 'testing');
+      beamResult.textContent = '';
+      beamTestButton.textContent = 'Test it to failure';
+      return;
+    }
+    beamCard.classList.remove('failed');
+    beamCard.classList.add('testing');
+    beamTestButton.disabled = true;
+    beamTestButton.textContent = 'Applying load...';
+    beamResult.textContent = 'Loading the beam...';
+    beamTimer = setTimeout(() => {
+      beamCard.classList.remove('testing');
+      beamCard.classList.add('failed');
+      beamResult.textContent = 'Failure reached. The support change increased measured stiffness by 58%.';
+      beamTestButton.disabled = false;
+      beamTestButton.textContent = 'Reset test';
+    }, 1050);
+  });
+}
+
+// Five-hold climbing Easter egg
+const holds = [...document.querySelectorAll('.climb-hold')];
+const routeProgress = document.querySelector('.route-progress');
+const topBanner = document.querySelector('.top-banner');
+let nextHold = 1;
+holds.forEach(hold => {
+  hold.addEventListener('click', () => {
+    const number = Number(hold.dataset.hold);
+    if (number !== nextHold) return;
+    hold.classList.remove('active-hold');
+    hold.disabled = true;
+    routeProgress.classList.add('show');
+    routeProgress.textContent = 'Hidden route: ' + number + ' / ' + holds.length;
+    nextHold += 1;
+    const next = document.querySelector('.climb-hold[data-hold="' + nextHold + '"]');
+    if (next) {
+      next.classList.add('active-hold');
+    } else {
+      routeProgress.textContent = 'Hidden route: TOP ✓';
+      topBanner.classList.add('show');
+      setTimeout(() => topBanner.classList.remove('show'), 4200);
+    }
+  });
+});
