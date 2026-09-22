@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260922-bookshelf2" />
+    <link rel="stylesheet" href="styles.css?v=20260922-memory" />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff176d'/%3E%3Cpath d='M15 46 29 17h7l13 29h-9l-2-6H26l-3 6Zm14-13h6l-3-8Z' fill='white'/%3E%3C/svg%3E"
@@ -395,6 +395,42 @@
               />
             </div>
           </div>
+
+          <div class="memory-game reveal" aria-labelledby="memory-title">
+            <div class="memory-intro">
+              <div>
+                <p class="kicker">A very small game about me</p>
+                <h2 id="memory-title">A few things about me</h2>
+                <p>
+                  Match the cards to uncover a few things that do not fit neatly
+                  into a résumé.
+                </p>
+              </div>
+              <div class="memory-toolbar" aria-label="Game status">
+                <span><b id="memory-moves">0</b> moves</span>
+                <span><b id="memory-matches">0</b>/6 matched</span>
+                <button id="memory-reset" type="button">Shuffle again</button>
+              </div>
+            </div>
+
+            <div class="memory-layout">
+              <div
+                class="memory-grid"
+                id="memory-grid"
+                role="grid"
+                aria-label="Memory matching game"
+              ></div>
+              <aside class="memory-fact" aria-live="polite">
+                <p class="memory-fact-label">UNLOCKED FACT</p>
+                <span class="memory-fact-icon" aria-hidden="true">?</span>
+                <h3>Find your first pair</h3>
+                <p>
+                  Each match reveals a small piece of my life outside a project
+                  title.
+                </p>
+              </aside>
+            </div>
+          </div>
         </section>
 
         <!-- BOOKS -->
@@ -403,7 +439,8 @@
             <p class="kicker">On my shelf</p>
             <h2>Five books I keep thinking about</h2>
             <p>
-              These are five books that have stuck with me. Click a spine to see why.
+              These are five books that have stuck with me. Click a spine to see
+              why.
             </p>
           </div>
           <div class="bookshelf-card reveal">
@@ -567,6 +604,6 @@
       </div>
     </dialog>
     <div class="toast" role="status" aria-live="polite">Email copied</div>
-    <script src="script.js?v=20260922-bookshelf2"></script>
+    <script src="script.js?v=20260922-memory"></script>
   </body>
 </html>
