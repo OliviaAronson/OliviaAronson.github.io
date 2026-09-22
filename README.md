@@ -6,7 +6,7 @@ This is a plain HTML, CSS, and JavaScript website hosted with GitHub Pages. It d
 
 - `index.html` contains the page sections, text, links, and image references.
 - `styles.css` controls the layout, colors, mobile design, and animations.
-- `script.js` controls dark mode, project details, the memory game, the bookshelf, the beam test, the poem window, and the Do Not Press button.
+- `script.js` controls dark mode, project details, the personality quiz, the memory game, the bookshelf, the design prompt generator, the beam test, the poem window, and the Do Not Press button.
 - `assets/` contains photographs and other images.
 - `documents/` contains reports and downloadable work samples.
 
@@ -23,6 +23,10 @@ The visible book spines are in the `BOOKS` section of `index.html`. The notes th
 ### Change a memory-game fact
 
 Open `script.js` and find the `memoryItems` list. Each item contains the card icon, its short label, and the fact revealed when the pair is matched.
+
+### Change the quiz or design prompt generator
+
+Quiz questions and results are stored in `quizQuestions` and `quizResults` inside `script.js`. The design-generator people and their compatible needs are stored together in `promptPeople`; broadly compatible limitations are stored in `promptConstraints`.
 
 ### Replace an image
 
