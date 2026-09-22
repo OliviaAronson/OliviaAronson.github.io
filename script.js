@@ -73,6 +73,131 @@ document
     setTimeout(() => toast.classList.remove("show"), 1700);
   });
 
+// Engineering personality quiz
+const quizQuestions = [
+  {
+    question: "A prototype fails. What do you do first?",
+    answers: [
+      ["Take it apart and start trying fixes", "hands"],
+      ["Check the measurements and test data", "data"],
+      ["Figure out which failure matters most to the user", "people"],
+      ["Return to the model and trace the weak point", "precision"],
+    ],
+  },
+  {
+    question: "Which job do you claim during a group project?",
+    answers: [
+      ["Building the first rough version", "hands"],
+      ["Making the spreadsheet everyone ends up using", "data"],
+      ["Keeping the team focused on the actual need", "people"],
+      ["Cleaning up the CAD until everything fits", "precision"],
+    ],
+  },
+  {
+    question: "Which moment is the most satisfying?",
+    answers: [
+      ["The parts finally fit together", "hands"],
+      ["The prediction and physical test agree", "data"],
+      ["Someone uses the design without needing instructions", "people"],
+      ["The assembly moves exactly as intended", "precision"],
+    ],
+  },
+  {
+    question: "The deadline suddenly moves up. What survives?",
+    answers: [
+      ["An ugly but functional prototype", "hands"],
+      ["The test plan and the important numbers", "data"],
+      ["The part of the experience the user actually needs", "people"],
+      ["The essential geometry and tolerances", "precision"],
+    ],
+  },
+];
+
+const quizResults = {
+  hands: {
+    icon: "⚙",
+    title: "Prototype Instigator",
+    text: "You would rather learn from a crooked first attempt than discuss a perfect idea for three more meetings. Give you materials, a deadline, and somewhere to make a mess.",
+  },
+  data: {
+    icon: "ƒx",
+    title: "Spreadsheet Detective",
+    text: "You trust a hunch more once it has labels, units, and a suspiciously well-formatted chart. If the result looks strange, you want to know exactly why.",
+  },
+  people: {
+    icon: "◎",
+    title: "Human-Centered Fixer",
+    text: "You keep asking who the design is for and what would make it genuinely useful. The cleverest solution does not win if the person using it hates it.",
+  },
+  precision: {
+    icon: "◇",
+    title: "Precision Architect",
+    text: "You notice the interference, missing dimension, and questionable tolerance before anyone else. You like designs that feel intentional all the way down.",
+  },
+};
+
+const quizContent = document.getElementById("quiz-content");
+const quizCount = document.getElementById("quiz-count");
+const quizProgressBar = document.getElementById("quiz-progress-bar");
+
+if (quizContent && quizCount && quizProgressBar) {
+  let quizIndex = 0;
+  let quizScores = { hands: 0, data: 0, people: 0, precision: 0 };
+
+  const showQuizResult = () => {
+    const resultKey = Object.keys(quizScores).reduce((best, key) =>
+      quizScores[key] > quizScores[best] ? key : best,
+    );
+    const result = quizResults[resultKey];
+    quizCount.textContent = "Result";
+    quizProgressBar.style.width = "100%";
+    quizContent.innerHTML = `
+      <div class="quiz-result">
+        <span aria-hidden="true">${result.icon}</span>
+        <p>YOU ARE A</p>
+        <h3>${result.title}</h3>
+        <p>${result.text}</p>
+        <button type="button" id="quiz-restart">Take it again</button>
+      </div>
+    `;
+    document.getElementById("quiz-restart").addEventListener("click", () => {
+      quizIndex = 0;
+      quizScores = { hands: 0, data: 0, people: 0, precision: 0 };
+      renderQuizQuestion();
+    });
+  };
+
+  const renderQuizQuestion = () => {
+    const item = quizQuestions[quizIndex];
+    quizCount.textContent = `Question ${quizIndex + 1} of ${quizQuestions.length}`;
+    quizProgressBar.style.width = `${((quizIndex + 1) / quizQuestions.length) * 100}%`;
+    quizContent.innerHTML = `
+      <h3 class="quiz-question">${item.question}</h3>
+      <div class="quiz-answers">
+        ${item.answers
+          .map(
+            ([answer, type], index) => `
+              <button type="button" data-quiz-type="${type}">
+                <span>${String.fromCharCode(65 + index)}</span>${answer}
+              </button>
+            `,
+          )
+          .join("")}
+      </div>
+    `;
+    quizContent.querySelectorAll("[data-quiz-type]").forEach((button) => {
+      button.addEventListener("click", () => {
+        quizScores[button.dataset.quizType] += 1;
+        quizIndex += 1;
+        if (quizIndex === quizQuestions.length) showQuizResult();
+        else renderQuizQuestion();
+      });
+    });
+  };
+
+  renderQuizQuestion();
+}
+
 // Interactive T-beam failure test
 const beamCard = document.querySelector(".beam-card");
 const beamTestButton = document.querySelector(".beam-test-button");
@@ -328,6 +453,162 @@ if (bookButtons.length && bookDetail) {
       );
     });
   });
+}
+
+// Compatible engineering design prompt generator
+const promptPeople = [
+  {
+    person: "a climber",
+    needs: [
+      "warm up their fingers safely",
+      "carry small training tools",
+      "track a gradual return from injury",
+      "organize gear at the base of a route",
+    ],
+  },
+  {
+    person: "a wheelchair user",
+    needs: [
+      "carry everyday items within easy reach",
+      "stabilize objects while moving",
+      "attach and remove storage independently",
+      "organize essentials without blocking propulsion",
+    ],
+  },
+  {
+    person: "an injured athlete",
+    needs: [
+      "complete rehab exercises consistently",
+      "measure progress without expensive equipment",
+      "carry several small rehab tools",
+      "adjust resistance independently",
+    ],
+  },
+  {
+    person: "a student",
+    needs: [
+      "transport fragile project materials",
+      "organize a very small workspace",
+      "remember which supplies need restocking",
+      "set up a study space quickly",
+    ],
+  },
+  {
+    person: "a dog owner",
+    needs: [
+      "keep walking supplies ready by the door",
+      "carry water on a long walk",
+      "organize search materials during an emergency",
+      "manage a leash and reward pouch with one hand",
+    ],
+  },
+  {
+    person: "a hands-on maker",
+    needs: [
+      "organize small parts during assembly",
+      "transport a fragile prototype",
+      "document tests while both hands are occupied",
+      "switch tools without cluttering the workbench",
+    ],
+  },
+];
+
+const promptConstraints = [
+  "it must cost less than $40",
+  "it must fit inside a backpack",
+  "it cannot use electronics",
+  "it must be cleaned in under one minute",
+  "it must use only off-the-shelf parts",
+  "it must assemble without tools",
+  "it must weigh less than two pounds",
+  "it must be repairable by its user",
+];
+
+const promptPerson = document.getElementById("prompt-person");
+const promptNeed = document.getElementById("prompt-need");
+const promptConstraint = document.getElementById("prompt-constraint");
+const promptBrief = document.getElementById("prompt-brief");
+const promptSpinAll = document.getElementById("prompt-spin-all");
+const promptSpinButtons = [...document.querySelectorAll("[data-prompt-spin]")];
+
+if (
+  promptPerson &&
+  promptNeed &&
+  promptConstraint &&
+  promptBrief &&
+  promptSpinAll &&
+  promptSpinButtons.length
+) {
+  let personIndex = 0;
+  let needIndex = 0;
+  let constraintIndex = 1;
+
+  const differentIndex = (length, current) => {
+    if (length < 2) return 0;
+    let next = current;
+    while (next === current) next = Math.floor(Math.random() * length);
+    return next;
+  };
+
+  const updatePrompt = () => {
+    const selected = promptPeople[personIndex];
+    const personText = selected.person;
+    const needText = selected.needs[needIndex];
+    const constraintText = promptConstraints[constraintIndex];
+    promptPerson.textContent = personText.replace(/^./, (letter) =>
+      letter.toUpperCase(),
+    );
+    promptNeed.textContent = needText.replace(/^./, (letter) =>
+      letter.toUpperCase(),
+    );
+    promptConstraint.textContent = constraintText.replace(/^./, (letter) =>
+      letter.toUpperCase(),
+    );
+    promptBrief.textContent = `Design something for ${personText} that helps them ${needText}. ${constraintText.replace(/^./, (letter) => letter.toUpperCase())}.`;
+  };
+
+  const spinPerson = () => {
+    personIndex = differentIndex(promptPeople.length, personIndex);
+    needIndex = Math.floor(
+      Math.random() * promptPeople[personIndex].needs.length,
+    );
+  };
+  const spinNeed = () => {
+    needIndex = differentIndex(
+      promptPeople[personIndex].needs.length,
+      needIndex,
+    );
+  };
+  const spinConstraint = () => {
+    constraintIndex = differentIndex(promptConstraints.length, constraintIndex);
+  };
+  const animatePrompt = () => {
+    document.querySelector(".prompt-machine").animate(
+      [
+        { transform: "translateY(3px)", opacity: 0.72 },
+        { transform: "translateY(0)", opacity: 1 },
+      ],
+      { duration: 230, easing: "ease-out" },
+    );
+  };
+
+  promptSpinButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.promptSpin === "person") spinPerson();
+      if (button.dataset.promptSpin === "need") spinNeed();
+      if (button.dataset.promptSpin === "constraint") spinConstraint();
+      updatePrompt();
+      animatePrompt();
+    });
+  });
+  promptSpinAll.addEventListener("click", () => {
+    spinPerson();
+    spinConstraint();
+    updatePrompt();
+    animatePrompt();
+  });
+
+  updatePrompt();
 }
 
 // Do Not Press Easter egg
