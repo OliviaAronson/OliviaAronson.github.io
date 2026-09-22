@@ -73,31 +73,6 @@ if (beamCard && beamTestButton && beamResult) {
   });
 }
 
-// Five-hold climbing Easter egg
-const holds = [...document.querySelectorAll('.climb-hold')];
-const routeProgress = document.querySelector('.route-progress');
-const topBanner = document.querySelector('.top-banner');
-let nextHold = 1;
-holds.forEach(hold => {
-  hold.addEventListener('click', () => {
-    const number = Number(hold.dataset.hold);
-    if (number !== nextHold) return;
-    hold.classList.remove('active-hold');
-    hold.disabled = true;
-    routeProgress.classList.add('show');
-    routeProgress.textContent = 'Hidden route: ' + number + ' / ' + holds.length;
-    nextHold += 1;
-    const next = document.querySelector('.climb-hold[data-hold="' + nextHold + '"]');
-    if (next) {
-      next.classList.add('active-hold');
-    } else {
-      routeProgress.textContent = 'Hidden route: TOP ✓';
-      topBanner.classList.add('show');
-      setTimeout(() => topBanner.classList.remove('show'), 4200);
-    }
-  });
-});
-
 
 // Do Not Press Easter egg
 const dangerButton = document.querySelector('.do-not-press');
