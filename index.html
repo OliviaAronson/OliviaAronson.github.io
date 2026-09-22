@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260922-memory" />
+    <link rel="stylesheet" href="styles.css?v=20260922-games" />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff176d'/%3E%3Cpath d='M15 46 29 17h7l13 29h-9l-2-6H26l-3 6Zm14-13h6l-3-8Z' fill='white'/%3E%3C/svg%3E"
@@ -90,6 +90,27 @@
             <span>Assistive technology</span><span>Product design</span
             ><span>Experimental testing</span
             ><span>Technical communication</span>
+          </div>
+        </section>
+
+        <!-- ENGINEERING PERSONALITY QUIZ -->
+        <section class="section quiz-section" id="quiz">
+          <div class="quiz-heading reveal">
+            <div>
+              <p class="kicker">Tiny detour</p>
+              <h2>What kind of engineer are you?</h2>
+            </div>
+            <p>Four questions. Mildly scientific. Extremely definitive.</p>
+          </div>
+
+          <div class="quiz-card reveal">
+            <div class="quiz-progress">
+              <span id="quiz-count">Question 1 of 4</span>
+              <div class="quiz-progress-track" aria-hidden="true">
+                <i id="quiz-progress-bar"></i>
+              </div>
+            </div>
+            <div id="quiz-content" aria-live="polite"></div>
           </div>
         </section>
 
@@ -401,9 +422,7 @@
               <div>
                 <p class="kicker">A very small game about me</p>
                 <h2 id="memory-title">A few things about me</h2>
-                <p>
-                  Match the cards to uncover a few more things about me.
-                </p>
+                <p>Match the cards to uncover a few more things about me.</p>
               </div>
               <div class="memory-toolbar" aria-label="Game status">
                 <span><b id="memory-moves">0</b> moves</span>
@@ -530,6 +549,60 @@
           </div>
         </section>
 
+        <!-- DESIGN PROMPT GENERATOR -->
+        <section class="section prompt-section" id="build-next">
+          <div class="prompt-heading reveal">
+            <div>
+              <p class="kicker">Design prompt generator</p>
+              <h2>What should I build next?</h2>
+            </div>
+            <p>
+              Spin all three, or change one piece at a time. Every need is tied
+              to the person it serves, so the prompt should actually make sense.
+            </p>
+          </div>
+
+          <div class="prompt-machine reveal">
+            <div class="prompt-slots">
+              <article class="prompt-slot">
+                <p>PERSON</p>
+                <strong id="prompt-person">A climber</strong>
+                <button type="button" data-prompt-spin="person">
+                  ↻ Change
+                </button>
+              </article>
+              <span class="prompt-plus" aria-hidden="true">+</span>
+              <article class="prompt-slot">
+                <p>NEED</p>
+                <strong id="prompt-need">Warm up their fingers safely</strong>
+                <button type="button" data-prompt-spin="need">↻ Change</button>
+              </article>
+              <span class="prompt-plus" aria-hidden="true">+</span>
+              <article class="prompt-slot">
+                <p>CONSTRAINT</p>
+                <strong id="prompt-constraint"
+                  >It must fit in a backpack</strong
+                >
+                <button type="button" data-prompt-spin="constraint">
+                  ↻ Change
+                </button>
+              </article>
+            </div>
+
+            <div class="prompt-output">
+              <p>YOUR BRIEF</p>
+              <h3 id="prompt-brief"></h3>
+              <button
+                class="prompt-spin-all"
+                id="prompt-spin-all"
+                type="button"
+              >
+                Spin all three
+              </button>
+            </div>
+          </div>
+        </section>
+
         <!-- CONTACT -->
         <section class="section contact-section" id="contact">
           <div class="contact-card reveal">
@@ -603,6 +676,6 @@
       </div>
     </dialog>
     <div class="toast" role="status" aria-live="polite">Email copied</div>
-    <script src="script.js?v=20260922-memory"></script>
+    <script src="script.js?v=20260922-games"></script>
   </body>
 </html>
