@@ -97,3 +97,19 @@ holds.forEach(hold => {
     }
   });
 });
+
+
+// Do Not Press Easter egg
+const dangerButton = document.querySelector('.do-not-press');
+if (dangerButton) {
+  dangerButton.addEventListener('click', () => {
+    if (body.classList.contains('integrity-warning')) return;
+    body.classList.add('integrity-warning');
+    dangerButton.textContent = 'YOU PRESSED IT';
+    setTimeout(() => body.classList.add('integrity-safe'), 1450);
+    setTimeout(() => {
+      body.classList.remove('integrity-warning', 'integrity-safe');
+      dangerButton.textContent = 'DO NOT PRESS';
+    }, 3300);
+  });
+}
