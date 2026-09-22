@@ -67,3 +67,20 @@
 @keyframes holdPulse{50%{box-shadow:0 4px 10px rgba(0,0,0,.2),0 0 0 7px rgba(255,23,109,.12)}}
 @media(max-width:700px){.climb-hold{width:31px;height:23px}.hold-one{right:5%;top:76%}.route-progress{bottom:10px;right:10px}.top-banner{width:calc(100% - 30px)}}
 @media(prefers-reduced-motion:reduce){.climb-hold.active-hold{animation:none}.beam-test-stage img,.load-arrow,.crack-mark{transition:none}}
+
+
+/* more hold-like hidden route */
+.climb-hold{width:36px;height:29px;border-radius:62% 38% 55% 45% / 42% 58% 42% 58%;box-shadow:inset -5px -5px 7px rgba(0,0,0,.18),inset 4px 4px 6px rgba(255,255,255,.28),0 5px 10px rgba(0,0,0,.24);transform:scale(.45) rotate(-24deg)}
+.climb-hold::before{content:"";position:absolute;left:7px;right:6px;bottom:5px;height:8px;border-radius:50%;background:rgba(0,0,0,.18);transform:rotate(-5deg)}
+.climb-hold::after{width:12px;height:6px;top:5px;left:8px;background:rgba(255,255,255,.32)}
+.climb-hold.active-hold{transform:scale(1) rotate(-24deg)}
+.hold-one{background:#ff176d;border-radius:64% 36% 46% 54% / 58% 42% 58% 42%}
+.hold-two{background:#25a9e0;border-radius:38% 62% 65% 35% / 48% 56% 44% 52%;transform:scale(.45) rotate(19deg)}
+.hold-two.active-hold{transform:scale(1) rotate(19deg)}
+.hold-three{background:#f4c430;width:42px;height:25px;border-radius:70% 30% 62% 38% / 38% 52% 48% 62%;transform:scale(.45) rotate(-8deg)}
+.hold-three.active-hold{transform:scale(1) rotate(-8deg)}
+.hold-four{background:#8e5bd9;width:31px;height:38px;border-radius:44% 56% 38% 62% / 65% 38% 62% 35%;transform:scale(.45) rotate(28deg)}
+.hold-four.active-hold{transform:scale(1) rotate(28deg)}
+.hold-five{background:#35b86b;width:43px;height:30px;border-radius:58% 42% 72% 28% / 44% 64% 36% 56%;transform:scale(.45) rotate(-31deg)}
+.hold-five.active-hold{transform:scale(1) rotate(-31deg)}
+@media(max-width:700px){.climb-hold{width:39px;height:32px}.hold-three{width:45px;height:28px}.hold-four{width:34px;height:41px}.hold-five{width:46px;height:33px}}
