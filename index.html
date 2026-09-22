@@ -1,184 +1,573 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Mechanical engineering portfolio of Olivia Aronson, featuring assistive design, structural testing, CAD, fabrication, data analysis, and technical writing.">
-  <meta name="theme-color" content="#ff176d">
-  <title>Olivia Aronson | Mechanical Engineering</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260922-bookshelf2">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff176d'/%3E%3Cpath d='M15 46 29 17h7l13 29h-9l-2-6H26l-3 6Zm14-13h6l-3-8Z' fill='white'/%3E%3C/svg%3E">
-</head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-  <aside class="rail" aria-label="Primary navigation">
-    <a class="mark" href="#home" aria-label="Olivia Aronson, home">OA</a>
-    <nav>
-      <a href="#work" data-nav="work"><span>01</span>Work</a>
-      <a href="#analysis" data-nav="analysis"><span>02</span>Analysis</a>
-      <a href="#about" data-nav="about"><span>03</span>About</a>
-      <a href="#books" data-nav="books"><span>04</span>Books</a>
-      <a href="#writing" data-nav="writing"><span>05</span>Writing</a>
-      <a href="#contact" data-nav="contact"><span>06</span>Contact</a>
-    </nav>
-    <button class="theme-button" type="button" aria-label="Switch color mode" title="Switch color mode">◐</button>
-  </aside>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Mechanical engineering portfolio of Olivia Aronson, featuring assistive design, structural testing, CAD, fabrication, data analysis, and technical writing."
+    />
+    <meta name="theme-color" content="#ff176d" />
+    <title>Olivia Aronson | Mechanical Engineering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260922-bookshelf2" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff176d'/%3E%3Cpath d='M15 46 29 17h7l13 29h-9l-2-6H26l-3 6Zm14-13h6l-3-8Z' fill='white'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <aside class="rail" aria-label="Primary navigation">
+      <a class="mark" href="#home" aria-label="Olivia Aronson, home">OA</a>
+      <nav>
+        <a href="#work" data-nav="work"><span>01</span>Work</a>
+        <a href="#analysis" data-nav="analysis"><span>02</span>Analysis</a>
+        <a href="#about" data-nav="about"><span>03</span>About</a>
+        <a href="#books" data-nav="books"><span>04</span>Books</a>
+        <a href="#writing" data-nav="writing"><span>05</span>Writing</a>
+        <a href="#contact" data-nav="contact"><span>06</span>Contact</a>
+      </nav>
+      <button
+        class="theme-button"
+        type="button"
+        aria-label="Switch color mode"
+        title="Switch color mode"
+      >
+        ◐
+      </button>
+    </aside>
 
-  <div class="site-shell">
-    <header class="topline">
-      <a href="#home">Olivia Aronson</a>
-      <p>Mechanical Engineering + Psychology</p>
-      <span>Chattanooga, TN</span>
-    </header>
+    <div class="site-shell">
+      <header class="topline">
+        <a href="#home">Olivia Aronson</a>
+        <p>Mechanical Engineering + Psychology</p>
+        <span>Chattanooga, TN</span>
+      </header>
 
-    <main id="main">
-      <section class="hero section" id="home">
-        <div class="hero-copy reveal">
-          <p class="kicker">Mechanical engineering portfolio</p>
-          <h1>Design and <em>engineering projects.</em></h1>
-          <p class="hero-text">I am Olivia, a mechanical engineering student at UTC with a psychology minor and an interest in biomedical engineering. This site is a collection of my design work, testing, analysis, and writing.</p>
-          <div class="button-row">
-            <a class="button primary" href="#work">Explore my work <span>↓</span></a>
-            <a class="button secondary" href="resume.html" target="_blank">Resume ↗</a><a class="button secondary" href="#contact">Get in touch</a>
+      <main id="main">
+        <!-- HOME -->
+        <section class="hero section" id="home">
+          <div class="hero-copy reveal">
+            <p class="kicker">Mechanical engineering portfolio</p>
+            <h1>Design and <em>engineering projects.</em></h1>
+            <p class="hero-text">
+              I am Olivia, a mechanical engineering student at UTC with a
+              psychology minor and an interest in biomedical engineering. This
+              site is a collection of my design work, testing, analysis, and
+              writing.
+            </p>
+            <div class="button-row">
+              <a class="button primary" href="#work"
+                >Explore my work <span>↓</span></a
+              >
+              <a class="button secondary" href="resume.html" target="_blank"
+                >Resume ↗</a
+              ><a class="button secondary" href="#contact">Get in touch</a>
+            </div>
           </div>
-        </div>
-        <div class="hero-portrait reveal">
-          <div class="portrait-frame"><img src="assets/olivia-profile.webp" alt="Portrait of Olivia Aronson"></div>
-          <p><strong>Junior at UTC</strong><br>BSME, Psychology minor<br>Expected May 2028</p>
-          <div class="orbit orbit-one">CAD</div><div class="orbit orbit-two">Excel</div><div class="orbit orbit-three">BME</div>
-        </div>
-        <div class="hero-strip reveal" aria-label="Areas of focus">
-          <span>Assistive technology</span><span>Product design</span><span>Experimental testing</span><span>Technical communication</span>
-        </div>
-      </section>
-
-      <section class="section" id="work">
-        <div class="section-heading reveal">
-          <p class="kicker">Selected engineering work</p>
-          <h2>Engineering projects</h2>
-          <p>A selection of projects involving design, fabrication, experimental testing, and iteration.</p>
-        </div>
-
-        <article class="feature-card reveal">
-          <div class="feature-image wheelchair-feature">
-  <img class="wheelchair-main-photo" src="assets/wheelchair-final.webp" alt="Completed wheelchair grocery transport system">
-</div>
-          <div class="feature-content">
-            <div class="card-label"><span>01</span> Assistive design</div>
-            <h3>Wheelchair Grocery Transport System</h3>
-            <p>A client at Calsted Independent Living needed a safer way to transport delivered groceries without interfering with wheelchair propulsion or requiring repeated rearward reaching. Our final system positioned the basket in front of the user while preserving normal wheelchair operation.</p>
-            <p>I led the initial client call and independently designed, laser cut, and installed the removable acrylic divider.</p>
-            <div class="stat-row"><div><strong>$147.53</strong><span>total cost</span></div><div><strong>63%</strong><span>below budget</span></div><div><strong>3 mm</strong><span>acrylic divider</span></div></div>
-            <div class="button-row"><a class="text-link" href="wheelchair-memo.html" target="_blank">Project memo ↗</a><button class="text-link detail-toggle" type="button" aria-expanded="false" aria-controls="wheelchair-more">How the design changed +</button></div>
-            <div class="expandable" id="wheelchair-more"><div><p>The early concepts were much larger and more complicated. Client feedback made the real constraints obvious: weight, reach, strap tension, and access mattered more than adding mechanisms. The final design became simpler because we learned more.</p><div class="wheelchair-detail-gallery"><img src="assets/wheelchair-cad-new.webp" alt="CAD model of the wheelchair transport system"><img src="assets/IMG_1682.jpeg" alt="Laser cutting setup for the acrylic divider"><img src="assets/IMG_1744.jpeg" alt="Acrylic divider installed in the basket"></div></div></div>
+          <div class="hero-portrait reveal">
+            <div class="portrait-frame">
+              <img
+                src="assets/olivia-profile.webp"
+                alt="Portrait of Olivia Aronson"
+              />
+            </div>
+            <p>
+              <strong>Junior at UTC</strong><br />BSME, Psychology minor<br />Expected
+              May 2028
+            </p>
+            <div class="orbit orbit-one">CAD</div>
+            <div class="orbit orbit-two">Excel</div>
+            <div class="orbit orbit-three">BME</div>
           </div>
-        </article>
-
-        <article class="feature-card reverse reveal">
-          <div class="feature-image"><img src="assets/truss-final.webp" alt="Clear acrylic crown truss bridge"></div>
-          <div class="feature-content">
-            <div class="card-label"><span>02</span> Structural design</div>
-            <h3>Acrylic Crown Truss</h3>
-            <p>I designed and fabricated a 1000 mm acrylic truss, then built an Excel model to predict member forces, buckling, deflection, mass, and failure load. Testing smaller members helped me calibrate the model before the full structure went into the Instron.</p>
-            <div class="stat-row"><div><strong>958 N</strong><span>failure load</span></div><div><strong>9.96%</strong><span>prediction error</span></div><div><strong>144 mm</strong><span>selected height</span></div></div>
-            <div class="button-row"><button class="text-link detail-toggle" type="button" aria-expanded="false" aria-controls="truss-more">See fabrication and testing +</button></div>
-            <div class="expandable gallery-three" id="truss-more"><img src="assets/truss-build.webp" alt="Truss clamped during assembly"><img src="assets/truss-test.webp" alt="Truss in Instron test frame"><img src="assets/truss-final.webp" alt="Finished truss"></div>
+          <div class="hero-strip reveal" aria-label="Areas of focus">
+            <span>Assistive technology</span><span>Product design</span
+            ><span>Experimental testing</span
+            ><span>Technical communication</span>
           </div>
-        </article>
+        </section>
 
-        <div class="project-grid">
-          <article class="small-card beam-card reveal"><div class="beam-photo beam-test-stage">
-  <img src="assets/beam-final.webp" alt="Laminated acrylic T-beam">
-  <div class="load-arrow" aria-hidden="true"><span>LOAD</span>↓</div>
-  <div class="crack-mark" aria-hidden="true">⚡</div>
-</div><div><p class="card-label">Mechanics of materials</p><h3>Indeterminate T-Beam</h3><p>Designed, laser cut, solvent welded, and failure-tested an 800 mm acrylic beam. Changing the support condition increased measured stiffness by 58%.</p><div class="beam-actions"><a class="text-link" href="https://github.com/OliviaAronson/OliviaAronson.github.io/raw/main/documents/beam-technical-summary.pdf" target="_blank">Technical summary ↗</a><button class="beam-test-button" type="button">Test it to failure</button></div><p class="beam-test-result" aria-live="polite"></p></div></article>
-          <article class="small-card louis-card reveal"><img src="assets/IMG_4363.jpeg" alt="Louis, the Cavalier King Charles Spaniel at the center of the search case study"><div><p class="card-label">Operations case study</p><h3>Finding Louis</h3><p>When my dog Louis went missing, I turned the search for him into a full-scale effort. I made and distributed flyers, knocked on doors, contacted local businesses, tracked leads in Excel, coordinated posts online, and eventually brought in a scent-trained bloodhound from out of state. It was personal, messy, and constantly changing, so keeping the information organized mattered.</p><button class="text-link detail-toggle" type="button" aria-expanded="false" aria-controls="louis-more">See the numbers +</button><div class="expandable" id="louis-more"><ul><li>500+ weatherproofed flyers</li><li>200+ doors knocked</li><li>80 businesses contacted</li><li>20+ business reposts</li><li>Excel lead log and shared Drive system</li></ul></div></div></article>
-        </div>
-      </section>
+        <!-- WORK -->
+        <section class="section" id="work">
+          <div class="section-heading reveal">
+            <p class="kicker">Selected engineering work</p>
+            <h2>Engineering projects</h2>
+            <p>
+              A selection of projects involving design, fabrication,
+              experimental testing, and iteration.
+            </p>
+          </div>
 
-      <section class="section analysis-section" id="analysis">
-        <div class="section-heading reveal"><p class="kicker">Data + technical communication</p><h2>Analysis and technical communication</h2><p>Examples of how I document experimental work, analyze results, and communicate engineering decisions.</p></div>
-        <div class="analysis-grid">
-          <article class="analysis-card reveal"><span class="analysis-icon">ƒx</span><h3>Data analysis</h3><p>Least-squares regression, curve fitting, residuals, R² comparison, outlier screening, and engineering plots completed in Excel and checked through manual calculation.</p><div class="mini-chart" aria-label="Decorative regression chart"><i style="height:25%"></i><i style="height:42%"></i><i style="height:40%"></i><i style="height:67%"></i><i style="height:82%"></i><b></b></div><a class="button secondary" href="https://github.com/OliviaAronson/OliviaAronson.github.io/raw/main/documents/data-analysis-lab-report.pdf" target="_blank">View analysis report ↗</a></article>
-          <article class="analysis-card reveal"><span class="analysis-icon">A4</span><h3>Technical writing</h3><p>My technical writing focuses on documenting methods, design requirements, results, and differences between experimental and theoretical behavior.</p><div class="document-links"><a href="wheelchair-memo.html" target="_blank"><b>Wheelchair project memo</b><span>Requirements + design + testing ↗</span></a><a href="https://github.com/OliviaAronson/OliviaAronson.github.io/raw/main/documents/beam-technical-summary.pdf" target="_blank"><b>Beam technical summary</b><span>Design + failure analysis ↗</span></a></div></article>
-          <article class="analysis-card reveal"><span class="analysis-icon">Aa</span><h3>Writing sample</h3><p>A two-page essay on workplace quality, burnout, compensation, and the tension between mission-driven work and sustainable employment.</p><a class="button secondary" href="writing-sample.html" target="_blank">Read writing sample ↗</a></article>
-        </div>
-        <div class="toolbelt reveal"><p>Current skills</p><div><span>SolidWorks</span><span>Excel</span><span>Maple</span><span>LightBurn</span><span>BossLaser</span><span>Instron testing</span><span>CAD</span><span>Laser cutting</span><span>Prototyping</span><span>Experimental data analysis</span><span>Technical writing</span><span>Google Workspace</span></div></div>
-      </section>
+          <article class="feature-card reveal">
+            <div class="feature-image wheelchair-feature">
+              <img
+                class="wheelchair-main-photo"
+                src="assets/wheelchair-final.webp"
+                alt="Completed wheelchair grocery transport system"
+              />
+            </div>
+            <div class="feature-content">
+              <div class="card-label"><span>01</span> Assistive design</div>
+              <h3>Wheelchair Grocery Transport System</h3>
+              <p>
+                A client at Calsted Independent Living needed a safer way to
+                transport delivered groceries without interfering with
+                wheelchair propulsion or requiring repeated rearward reaching.
+                Our final system positioned the basket in front of the user
+                while preserving normal wheelchair operation.
+              </p>
+              <p>
+                I led the initial client call and independently designed, laser
+                cut, and installed the removable acrylic divider.
+              </p>
+              <div class="stat-row">
+                <div><strong>$147.53</strong><span>total cost</span></div>
+                <div><strong>63%</strong><span>below budget</span></div>
+                <div><strong>3 mm</strong><span>acrylic divider</span></div>
+              </div>
+              <div class="button-row">
+                <a class="text-link" href="wheelchair-memo.html" target="_blank"
+                  >Project memo ↗</a
+                ><button
+                  class="text-link detail-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="wheelchair-more"
+                >
+                  How the design changed +
+                </button>
+              </div>
+              <div class="expandable" id="wheelchair-more">
+                <div>
+                  <p>
+                    The early concepts were much larger and more complicated.
+                    Client feedback made the real constraints obvious: weight,
+                    reach, strap tension, and access mattered more than adding
+                    mechanisms. The final design became simpler because we
+                    learned more.
+                  </p>
+                  <div class="wheelchair-detail-gallery">
+                    <img
+                      src="assets/wheelchair-cad-new.webp"
+                      alt="CAD model of the wheelchair transport system"
+                    /><img
+                      src="assets/IMG_1682.jpeg"
+                      alt="Laser cutting setup for the acrylic divider"
+                    /><img
+                      src="assets/IMG_1744.jpeg"
+                      alt="Acrylic divider installed in the basket"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
 
-      <section class="section about-section" id="about">
-        <div class="about-grid">
-          <div class="about-copy reveal"><p class="kicker">Outside engineering</p><h2>Rock climbing</h2><p>I have been rock climbing for three years and strength training for four. I plan my own training around climbing performance, recovery, and injury prevention.</p><p>That interest overlaps naturally with biomechanics and with my broader interest in engineering for human movement and assistive technology.</p></div>
-          <div class="climb-collage reveal"><img src="assets/climbing-2.webp" alt="Olivia rock climbing outdoors"><img src="assets/climbing-4.webp" alt="Olivia bouldering on sandstone"><img src="assets/climbing-5.webp" alt="Olivia climbing beneath an overhang"></div>
-        </div>
-      </section>
+          <article class="feature-card reverse reveal">
+            <div class="feature-image">
+              <img
+                src="assets/truss-final.webp"
+                alt="Clear acrylic crown truss bridge"
+              />
+            </div>
+            <div class="feature-content">
+              <div class="card-label"><span>02</span> Structural design</div>
+              <h3>Acrylic Crown Truss</h3>
+              <p>
+                I designed and fabricated a 1000 mm acrylic truss, then built an
+                Excel model to predict member forces, buckling, deflection,
+                mass, and failure load. Testing smaller members helped me
+                calibrate the model before the full structure went into the
+                Instron.
+              </p>
+              <div class="stat-row">
+                <div><strong>958 N</strong><span>failure load</span></div>
+                <div><strong>9.96%</strong><span>prediction error</span></div>
+                <div><strong>144 mm</strong><span>selected height</span></div>
+              </div>
+              <div class="button-row">
+                <button
+                  class="text-link detail-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="truss-more"
+                >
+                  See fabrication and testing +
+                </button>
+              </div>
+              <div class="expandable gallery-three" id="truss-more">
+                <img
+                  src="assets/truss-build.webp"
+                  alt="Truss clamped during assembly"
+                /><img
+                  src="assets/truss-test.webp"
+                  alt="Truss in Instron test frame"
+                /><img src="assets/truss-final.webp" alt="Finished truss" />
+              </div>
+            </div>
+          </article>
 
+          <div class="project-grid">
+            <article class="small-card beam-card reveal">
+              <div class="beam-photo beam-test-stage">
+                <img
+                  src="assets/beam-final.webp"
+                  alt="Laminated acrylic T-beam"
+                />
+                <div class="load-arrow" aria-hidden="true">
+                  <span>LOAD</span>↓
+                </div>
+                <div class="crack-mark" aria-hidden="true">⚡</div>
+              </div>
+              <div>
+                <p class="card-label">Mechanics of materials</p>
+                <h3>Indeterminate T-Beam</h3>
+                <p>
+                  Designed, laser cut, solvent welded, and failure-tested an 800
+                  mm acrylic beam. Changing the support condition increased
+                  measured stiffness by 58%.
+                </p>
+                <div class="beam-actions">
+                  <a
+                    class="text-link"
+                    href="https://github.com/OliviaAronson/OliviaAronson.github.io/raw/main/documents/beam-technical-summary.pdf"
+                    target="_blank"
+                    >Technical summary ↗</a
+                  ><button class="beam-test-button" type="button">
+                    Test it to failure
+                  </button>
+                </div>
+                <p class="beam-test-result" aria-live="polite"></p>
+              </div>
+            </article>
+            <article class="small-card louis-card reveal">
+              <img
+                src="assets/IMG_4363.jpeg"
+                alt="Louis, the Cavalier King Charles Spaniel at the center of the search case study"
+              />
+              <div>
+                <p class="card-label">Operations case study</p>
+                <h3>Finding Louis</h3>
+                <p>
+                  When my dog Louis went missing, I turned the search for him
+                  into a full-scale effort. I made and distributed flyers,
+                  knocked on doors, contacted local businesses, tracked leads in
+                  Excel, coordinated posts online, and eventually brought in a
+                  scent-trained bloodhound from out of state. It was personal,
+                  messy, and constantly changing, so keeping the information
+                  organized mattered.
+                </p>
+                <button
+                  class="text-link detail-toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="louis-more"
+                >
+                  See the numbers +
+                </button>
+                <div class="expandable" id="louis-more">
+                  <ul>
+                    <li>500+ weatherproofed flyers</li>
+                    <li>200+ doors knocked</li>
+                    <li>80 businesses contacted</li>
+                    <li>20+ business reposts</li>
+                    <li>Excel lead log and shared Drive system</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
 
-      <section class="section books-section" id="books">
-        <div class="section-heading reveal">
-          <p class="kicker">On my shelf</p>
-          <h2>Five books I keep thinking about</h2>
-          <p>These are the books I recommend before someone has even finished asking. Click a spine to see why each one stuck with me.</p>
-        </div>
-        <div class="bookshelf-card reveal">
-          <div class="bookshelf" aria-label="Olivia's favorite books">
-            <div class="book-row">
-              <button class="book book-one active" type="button" data-book="0" aria-pressed="true">
-                <span class="book-title">The Little Book of Big Change</span>
-                <span class="book-author">Amy Johnson</span>
-              </button>
-              <button class="book book-two" type="button" data-book="1" aria-pressed="false">
-                <span class="book-title">The Omnivore's Dilemma</span>
-                <span class="book-author">Michael Pollan</span>
-              </button>
-              <button class="book book-three" type="button" data-book="2" aria-pressed="false">
-                <span class="book-title">The Secret History</span>
-                <span class="book-author">Donna Tartt</span>
-              </button>
-              <button class="book book-four" type="button" data-book="3" aria-pressed="false">
-                <span class="book-title">The Road</span>
-                <span class="book-author">Cormac McCarthy</span>
-              </button>
-              <button class="book book-five" type="button" data-book="4" aria-pressed="false">
-                <span class="book-title">On Earth We're Briefly Gorgeous</span>
-                <span class="book-author">Ocean Vuong</span>
+        <!-- ANALYSIS -->
+        <section class="section analysis-section" id="analysis">
+          <div class="section-heading reveal">
+            <p class="kicker">Data + technical communication</p>
+            <h2>Analysis and technical communication</h2>
+            <p>
+              Examples of how I document experimental work, analyze results, and
+              communicate engineering decisions.
+            </p>
+          </div>
+          <div class="analysis-grid">
+            <article class="analysis-card reveal">
+              <span class="analysis-icon">ƒx</span>
+              <h3>Data analysis</h3>
+              <p>
+                Least-squares regression, curve fitting, residuals, R²
+                comparison, outlier screening, and engineering plots completed
+                in Excel and checked through manual calculation.
+              </p>
+              <div class="mini-chart" aria-label="Decorative regression chart">
+                <i style="height: 25%"></i><i style="height: 42%"></i
+                ><i style="height: 40%"></i><i style="height: 67%"></i
+                ><i style="height: 82%"></i><b></b>
+              </div>
+              <a
+                class="button secondary"
+                href="https://github.com/OliviaAronson/OliviaAronson.github.io/raw/main/documents/data-analysis-lab-report.pdf"
+                target="_blank"
+                >View analysis report ↗</a
+              >
+            </article>
+            <article class="analysis-card reveal">
+              <span class="analysis-icon">A4</span>
+              <h3>Technical writing</h3>
+              <p>
+                My technical writing focuses on documenting methods, design
+                requirements, results, and differences between experimental and
+                theoretical behavior.
+              </p>
+              <div class="document-links">
+                <a href="wheelchair-memo.html" target="_blank"
+                  ><b>Wheelchair project memo</b
+                  ><span>Requirements + design + testing ↗</span></a
+                ><a
+                  href="https://github.com/OliviaAronson/OliviaAronson.github.io/raw/main/documents/beam-technical-summary.pdf"
+                  target="_blank"
+                  ><b>Beam technical summary</b
+                  ><span>Design + failure analysis ↗</span></a
+                >
+              </div>
+            </article>
+            <article class="analysis-card reveal">
+              <span class="analysis-icon">Aa</span>
+              <h3>Writing sample</h3>
+              <p>
+                A two-page essay on workplace quality, burnout, compensation,
+                and the tension between mission-driven work and sustainable
+                employment.
+              </p>
+              <a
+                class="button secondary"
+                href="writing-sample.html"
+                target="_blank"
+                >Read writing sample ↗</a
+              >
+            </article>
+          </div>
+          <div class="toolbelt reveal">
+            <p>Current skills</p>
+            <div>
+              <span>SolidWorks</span><span>Excel</span><span>Maple</span
+              ><span>LightBurn</span><span>BossLaser</span
+              ><span>Instron testing</span><span>CAD</span
+              ><span>Laser cutting</span><span>Prototyping</span
+              ><span>Experimental data analysis</span
+              ><span>Technical writing</span><span>Google Workspace</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section about-section" id="about">
+          <div class="about-grid">
+            <div class="about-copy reveal">
+              <p class="kicker">Outside engineering</p>
+              <h2>Rock climbing</h2>
+              <p>
+                I have been rock climbing for three years and strength training
+                for four. I plan my own training around climbing performance,
+                recovery, and injury prevention.
+              </p>
+              <p>
+                That interest overlaps naturally with biomechanics and with my
+                broader interest in engineering for human movement and assistive
+                technology.
+              </p>
+            </div>
+            <div class="climb-collage reveal">
+              <img
+                src="assets/climbing-2.webp"
+                alt="Olivia rock climbing outdoors"
+              /><img
+                src="assets/climbing-4.webp"
+                alt="Olivia bouldering on sandstone"
+              /><img
+                src="assets/climbing-5.webp"
+                alt="Olivia climbing beneath an overhang"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- BOOKS -->
+        <section class="section books-section" id="books">
+          <div class="section-heading reveal">
+            <p class="kicker">On my shelf</p>
+            <h2>Five books I keep thinking about</h2>
+            <p>
+              These are the books I recommend before someone has even finished
+              asking. Click a spine to see why each one stuck with me.
+            </p>
+          </div>
+          <div class="bookshelf-card reveal">
+            <div class="bookshelf" aria-label="Olivia's favorite books">
+              <div class="book-row">
+                <button
+                  class="book book-one active"
+                  type="button"
+                  data-book="0"
+                  aria-pressed="true"
+                >
+                  <span class="book-title">The Little Book of Big Change</span>
+                  <span class="book-author">Amy Johnson</span>
+                </button>
+                <button
+                  class="book book-two"
+                  type="button"
+                  data-book="1"
+                  aria-pressed="false"
+                >
+                  <span class="book-title">The Omnivore's Dilemma</span>
+                  <span class="book-author">Michael Pollan</span>
+                </button>
+                <button
+                  class="book book-three"
+                  type="button"
+                  data-book="2"
+                  aria-pressed="false"
+                >
+                  <span class="book-title">The Secret History</span>
+                  <span class="book-author">Donna Tartt</span>
+                </button>
+                <button
+                  class="book book-four"
+                  type="button"
+                  data-book="3"
+                  aria-pressed="false"
+                >
+                  <span class="book-title">The Road</span>
+                  <span class="book-author">Cormac McCarthy</span>
+                </button>
+                <button
+                  class="book book-five"
+                  type="button"
+                  data-book="4"
+                  aria-pressed="false"
+                >
+                  <span class="book-title"
+                    >On Earth We're Briefly Gorgeous</span
+                  >
+                  <span class="book-author">Ocean Vuong</span>
+                </button>
+              </div>
+              <div class="shelf-edge"><span>click a spine</span></div>
+            </div>
+            <article class="book-detail" aria-live="polite">
+              <p class="book-number">BOOK 01</p>
+              <h3>The Little Book of Big Change</h3>
+              <p class="book-byline">Amy Johnson</p>
+              <p class="book-note">
+                This book was pivotal in changing how I think about my own
+                thoughts. It helped me step outside an immediate feeling or
+                habit long enough to see it as something happening, not
+                something that has to control what I do.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- WRITING -->
+        <section class="section writing-section" id="writing">
+          <div class="writing-card reveal">
+            <div>
+              <p class="kicker">Creative writing</p>
+              <h2>Selected writing</h2>
+              <p>
+                I also write poetry and short-form creative work. This is one
+                piece I chose to include here.
+              </p>
+              <button class="button primary" type="button" id="open-poem">
+                Read “Again”
               </button>
             </div>
-            <div class="shelf-edge"><span>click a spine</span></div>
+            <blockquote>
+              “What are we if not residue<br />if not fingertips fogging up
+              glass”
+            </blockquote>
           </div>
-          <article class="book-detail" aria-live="polite">
-            <p class="book-number">BOOK 01</p>
-            <h3>The Little Book of Big Change</h3>
-            <p class="book-byline">Amy Johnson</p>
-            <p class="book-note">This book was pivotal in changing how I think about my own thoughts. It helped me step outside an immediate feeling or habit long enough to see it as something happening, not something that has to control what I do.</p>
-          </article>
-        </div>
-      </section>
+        </section>
 
-      <section class="section writing-section" id="writing">
-        <div class="writing-card reveal">
-          <div><p class="kicker">Creative writing</p><h2>Selected writing</h2><p>I also write poetry and short-form creative work. This is one piece I chose to include here.</p><button class="button primary" type="button" id="open-poem">Read “Again”</button></div>
-          <blockquote>“What are we if not residue<br>if not fingertips fogging up glass”</blockquote>
-        </div>
-      </section>
-
-      <section class="section contact-section" id="contact">
-        <div class="contact-card reveal"><p class="kicker">Contact</p><h2>Get in touch</h2><p>I am currently interested in internship opportunities involving mechanical design, biomedical engineering, prototyping, testing, or technical project work.</p><div class="button-row"><a class="button primary" href="mailto:oliviaaronson456@gmail.com">Email me</a><button class="button secondary copy-email" type="button" data-email="oliviaaronson456@gmail.com">Copy email</button></div></div>
-      </section>
-    </main>
-    <div class="danger-zone">
-      <span>One last thing...</span>
-      <button class="do-not-press" type="button">DO NOT PRESS</button>
+        <!-- CONTACT -->
+        <section class="section contact-section" id="contact">
+          <div class="contact-card reveal">
+            <p class="kicker">Contact</p>
+            <h2>Get in touch</h2>
+            <p>
+              I am currently interested in internship opportunities involving
+              mechanical design, biomedical engineering, prototyping, testing,
+              or technical project work.
+            </p>
+            <div class="button-row">
+              <a class="button primary" href="mailto:oliviaaronson456@gmail.com"
+                >Email me</a
+              ><button
+                class="button secondary copy-email"
+                type="button"
+                data-email="oliviaaronson456@gmail.com"
+              >
+                Copy email
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div class="danger-zone">
+        <span>One last thing...</span>
+        <button class="do-not-press" type="button">DO NOT PRESS</button>
+      </div>
+      <footer>
+        <span>Olivia Aronson</span
+        ><span>Mechanical Engineering + Psychology</span
+        ><a href="#home">Back to top ↑</a>
+      </footer>
+      <div class="integrity-alert" role="status" aria-live="assertive">
+        <strong>⚠ STRUCTURAL INTEGRITY COMPROMISED</strong
+        ><span>...actually, we're fine.</span>
+      </div>
     </div>
-    <footer><span>Olivia Aronson</span><span>Mechanical Engineering + Psychology</span><a href="#home">Back to top ↑</a></footer>
-    <div class="integrity-alert" role="status" aria-live="assertive"><strong>⚠ STRUCTURAL INTEGRITY COMPROMISED</strong><span>...actually, we're fine.</span></div>
-  </div>
 
-  <dialog id="poem-dialog" aria-labelledby="poem-title"><button class="dialog-close" type="button" aria-label="Close poem">×</button><p class="kicker">Selected poem</p><h2 id="poem-title">Again</h2><div class="poem"><p>There is a language in this<br><span>in the settling dust</span><br>Hardwood sighs beneath heels</p><p>You speak only in soft collisions now<br><span>Too busy reading the light as it bends across window sills</span><br>Counting hours in the sunlight<br><em>even time wants to stay close to you</em></p><p>What are we if not residue<br><span>if not fingertips fogging up glass</span><br>Something mouthed underwater<br><span>vows folded in tide</span><br>All consonants and quiet...</p><p>All we are is what we leave behind<br><span>Hands tethered to worn-out wrists</span><br>Breath caught between hollow things</p><p><em>Intimate and ultimate.</em></p></div></dialog>
-  <div class="toast" role="status" aria-live="polite">Email copied</div>
-  <script src="script.js?v=20260922-bookshelf2"></script>
-</body>
+    <dialog id="poem-dialog" aria-labelledby="poem-title">
+      <button class="dialog-close" type="button" aria-label="Close poem">
+        ×
+      </button>
+      <p class="kicker">Selected poem</p>
+      <h2 id="poem-title">Again</h2>
+      <div class="poem">
+        <p>
+          There is a language in this<br /><span>in the settling dust</span
+          ><br />Hardwood sighs beneath heels
+        </p>
+        <p>
+          You speak only in soft collisions now<br /><span
+            >Too busy reading the light as it bends across window sills</span
+          ><br />Counting hours in the sunlight<br /><em
+            >even time wants to stay close to you</em
+          >
+        </p>
+        <p>
+          What are we if not residue<br /><span
+            >if not fingertips fogging up glass</span
+          ><br />Something mouthed underwater<br /><span
+            >vows folded in tide</span
+          ><br />All consonants and quiet...
+        </p>
+        <p>
+          All we are is what we leave behind<br /><span
+            >Hands tethered to worn-out wrists</span
+          ><br />Breath caught between hollow things
+        </p>
+        <p><em>Intimate and ultimate.</em></p>
+      </div>
+    </dialog>
+    <div class="toast" role="status" aria-live="polite">Email copied</div>
+    <script src="script.js?v=20260922-bookshelf2"></script>
+  </body>
 </html>
