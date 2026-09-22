@@ -103,6 +103,168 @@ if (beamCard && beamTestButton && beamResult) {
   });
 }
 
+// Memory game
+const memoryItems = [
+  {
+    id: "climb",
+    icon: "△",
+    label: "Climb",
+    fact: "I have been climbing for three years. I plan my own training and am probably thinking about grip positions more often than necessary.",
+  },
+  {
+    id: "biomed",
+    icon: "♡",
+    label: "Biomed",
+    fact: "I study mechanical engineering and psychology, and I am especially interested in biomedical engineering, prosthetics, and assistive design.",
+  },
+  {
+    id: "make",
+    icon: "⚙",
+    label: "Build",
+    fact: "I like projects that leave the screen. I have worked with SolidWorks, laser cutters, acrylic fabrication, and physical testing.",
+  },
+  {
+    id: "write",
+    icon: "✎",
+    label: "Write",
+    fact: "I write poetry and short fiction. Technical and creative writing make me pay attention in completely different ways.",
+  },
+  {
+    id: "louis",
+    icon: "🐾",
+    label: "Louis",
+    fact: "When Louis went missing, I printed 500+ flyers, knocked on 200+ doors, tracked leads in Excel, and brought a scent-trained bloodhound across state lines.",
+  },
+  {
+    id: "test",
+    icon: "↯",
+    label: "Test",
+    fact: "My favorite part of engineering is testing a design and finding out where the real object disagrees with the model.",
+  },
+];
+
+const memoryGrid = document.getElementById("memory-grid");
+const memoryMoves = document.getElementById("memory-moves");
+const memoryMatches = document.getElementById("memory-matches");
+const memoryReset = document.getElementById("memory-reset");
+const memoryFact = document.querySelector(".memory-fact");
+
+if (memoryGrid && memoryMoves && memoryMatches && memoryReset && memoryFact) {
+  let firstCard = null;
+  let secondCard = null;
+  let locked = false;
+  let moves = 0;
+  let matches = 0;
+
+  const shuffle = (items) => {
+    const copy = [...items];
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  };
+
+  const showFact = (item) => {
+    memoryFact.innerHTML = `
+      <p class="memory-fact-label">UNLOCKED: ${item.label.toUpperCase()}</p>
+      <span class="memory-fact-icon" aria-hidden="true">${item.icon}</span>
+      <h3>${item.label}</h3>
+      <p>${item.fact}</p>
+    `;
+  };
+
+  const finishTurn = () => {
+    firstCard = null;
+    secondCard = null;
+    locked = false;
+  };
+
+  const chooseCard = (card) => {
+    if (locked || card === firstCard || card.classList.contains("matched"))
+      return;
+
+    card.classList.add("flipped");
+    card.setAttribute("aria-label", `${card.dataset.label} card`);
+
+    if (!firstCard) {
+      firstCard = card;
+      return;
+    }
+
+    secondCard = card;
+    locked = true;
+    moves += 1;
+    memoryMoves.textContent = moves;
+
+    if (firstCard.dataset.pair === secondCard.dataset.pair) {
+      firstCard.classList.add("matched");
+      secondCard.classList.add("matched");
+      matches += 1;
+      memoryMatches.textContent = matches;
+      showFact(memoryItems.find((item) => item.id === firstCard.dataset.pair));
+      finishTurn();
+
+      if (matches === memoryItems.length) {
+        memoryFact.classList.add("complete");
+        memoryFact.querySelector(".memory-fact-label").textContent =
+          "ALL SIX FOUND";
+      }
+      return;
+    }
+
+    window.setTimeout(() => {
+      firstCard.classList.remove("flipped");
+      secondCard.classList.remove("flipped");
+      firstCard.setAttribute("aria-label", "Hidden memory card");
+      secondCard.setAttribute("aria-label", "Hidden memory card");
+      finishTurn();
+    }, 720);
+  };
+
+  const startMemoryGame = () => {
+    firstCard = null;
+    secondCard = null;
+    locked = false;
+    moves = 0;
+    matches = 0;
+    memoryMoves.textContent = "0";
+    memoryMatches.textContent = "0";
+    memoryFact.classList.remove("complete");
+    memoryFact.innerHTML = `
+      <p class="memory-fact-label">UNLOCKED FACT</p>
+      <span class="memory-fact-icon" aria-hidden="true">?</span>
+      <h3>Find your first pair</h3>
+      <p>Each match reveals a small piece of my life outside a project title.</p>
+    `;
+
+    const deck = shuffle([...memoryItems, ...memoryItems]);
+    memoryGrid.innerHTML = "";
+    deck.forEach((item) => {
+      const card = document.createElement("button");
+      card.className = `memory-card memory-${item.id}`;
+      card.type = "button";
+      card.dataset.pair = item.id;
+      card.dataset.label = item.label;
+      card.setAttribute("role", "gridcell");
+      card.setAttribute("aria-label", "Hidden memory card");
+      card.innerHTML = `
+        <span class="memory-card-inner">
+          <span class="memory-card-back" aria-hidden="true">OA</span>
+          <span class="memory-card-front" aria-hidden="true">
+            <b>${item.icon}</b><small>${item.label}</small>
+          </span>
+        </span>
+      `;
+      card.addEventListener("click", () => chooseCard(card));
+      memoryGrid.append(card);
+    });
+  };
+
+  memoryReset.addEventListener("click", startMemoryGame);
+  startMemoryGame();
+}
+
 // Interactive bookshelf
 const books = [
   {
