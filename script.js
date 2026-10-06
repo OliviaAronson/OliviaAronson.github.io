@@ -258,7 +258,7 @@ const memoryItems = [
     id: "louis",
     icon: "🐾",
     label: "Louis",
-    fact: "When Louis went missing, I printed 500+ flyers, knocked on 200+ doors, tracked leads in Excel, and brought a scent-trained bloodhound across state lines.",
+    fact: "When my dog Louis went missing, I printed 500+ flyers, knocked on 200+ doors, tracked leads in Excel, and brought a scent-trained bloodhound across state lines.",
   },
   {
     id: "test",
@@ -414,13 +414,13 @@ const books = [
     number: "BOOK 04",
     title: "The Road",
     author: "Cormac McCarthy",
-    note: "The writing is stripped down without feeling empty. It made a brutal story feel strangely tender, and the relationship at its center stayed with me long after I finished it.",
+    note: "The writing is stripped down without feeling empty. It made a brutal story feel uniquely tender, and the relationship at its center stayed with me long after I finished it.",
   },
   {
     number: "BOOK 05",
     title: "On Earth We're Briefly Gorgeous",
     author: "Ocean Vuong",
-    note: "This is one of the books that reminds me how much form can do. It moves between fiction, memory, and poetry in a way that feels intimate without ever becoming simple.",
+    note: "This is one of the books that reminds me how much form can do. It moves between fiction, memory, and poetry in a way that feels intimate without becoming simple.",
   },
 ];
 
