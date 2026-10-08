@@ -1192,10 +1192,17 @@ dialog::backdrop {
 }
 .memo-process-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0 44px;
+  align-items: stretch;
+}
+.memo-process-gallery img {
+  display: block;
+  width: 100%;
   height: 230px;
-  margin: 20px 0 34px;
+  min-width: 0;
+  object-fit: cover;
 }
 @media (max-width: 700px) {
   .wheelchair-detail-gallery {
@@ -1213,8 +1220,9 @@ dialog::backdrop {
     grid-row: auto;
   }
   .memo-process-gallery {
-    height: auto;
     grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 36px;
   }
   .memo-process-gallery img {
     height: 220px;
