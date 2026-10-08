@@ -26,14 +26,6 @@ body {
     400 16px/1.6 "DM Sans",
     sans-serif;
 }
-body.dark {
-  --ink: #f7f7f8;
-  --muted: #b6b7bd;
-  --paper: #17181d;
-  --card: #222329;
-  --line: #3a3c44;
-  --shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
-}
 img {
   display: block;
   max-width: 100%;
@@ -106,16 +98,6 @@ button {
 .rail nav a:focus-visible {
   background: #fff;
   color: #111;
-}
-.theme-button {
-  border: 0;
-  background: rgba(255, 255, 255, 0.22);
-  color: #fff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  font-size: 1.25rem;
 }
 .site-shell {
   margin-left: var(--rail);
@@ -956,10 +938,6 @@ dialog::backdrop {
   }
   .rail nav a span {
     display: none;
-  }
-  .theme-button {
-    margin-left: auto;
-    flex: 0 0 auto;
   }
   .site-shell {
     margin-left: 0;
