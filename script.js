@@ -1,17 +1,5 @@
 const body = document.body;
 
-// Color mode
-const themeButton = document.querySelector(".theme-button");
-const savedTheme = localStorage.getItem("oa-theme");
-if (savedTheme === "dark") body.classList.add("dark");
-themeButton.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  localStorage.setItem(
-    "oa-theme",
-    body.classList.contains("dark") ? "dark" : "light",
-  );
-});
-
 // Expandable project details
 document.querySelectorAll(".detail-toggle").forEach((button) => {
   button.addEventListener("click", () => {
